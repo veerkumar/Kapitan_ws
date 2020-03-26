@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	</head>
+	<body>
+		<h1>Welcome to demo<b> <h1>
+			<p> Parameter for this server are <b>
+	   	    {'_reclass_': {'name': {'full': 'staging', 'short': 'staging'}, 'environment': 'base'}, 'kapitan': {'vars': {'target': 'staging'}, 'compile': [{'output_path': '.', 'input_type': 'jinja2', 'input_paths': ['templates/docs']}, {'output_path': 'manifests', 'input_type': 'jinja2', 'output_type': 'html', 'input_paths': ['templates/nginx.conf']}, {'output_path': 'manifests/html', 'input_type': 'jinja2', 'input_paths': ['templates/*.html']}, {'output_path': '.', 'input_type': 'jinja2', 'input_paths': ['templates/scripts/']}]}, 'your_component': {'some_parameter': True}, 'target_name': 'staging', 'nginx': {'image': 'nginx:1:15.8', 'replicas': 2, 'server_name': 'localhost', 'charset': 'koi8-r', 'error_404': True, 'location': {'default': '/usr/share/nginx/html', 'root': '$(pwd)/compiled/staging/manifests/html'}, 'ports': {'container_port': 9001, 'host_port': 80}}}
+		</p>
+	</body>
+</html>

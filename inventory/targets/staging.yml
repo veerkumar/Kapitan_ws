@@ -1,0 +1,19 @@
+classes:
+  - common
+  - my_component
+
+parameters:
+  target_name: staging
+  nginx:
+          image: nginx:1:15.8
+          replicas: 2
+          server_name: localhost
+          charset: koi8-r
+          error_404: true
+          location:
+                  default: /usr/share/nginx/html
+                  root: $(pwd)/compiled/${kapitan:vars:target}/manifests/html
+                
+          ports:
+                  container_port: 9001
+                  host_port: 80

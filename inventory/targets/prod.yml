@@ -1,0 +1,19 @@
+classes:
+  - common
+  - my_component
+
+parameters:
+  target_name: prod
+  nginx:
+          image: nginx:1:15.8
+          replicas: 2
+          server_name: 8.8.8.8
+          charset: koi8-r
+          error_404: true
+          location:
+                  default: /usr/share/nginx/html
+                  root: $(pwd)/compiled/${kapitan:vars:target}/manifests/html
+                
+          ports:
+                  container_port: 32232
+                  host_port: 80
